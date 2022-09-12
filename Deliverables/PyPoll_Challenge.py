@@ -18,7 +18,7 @@ candidate_names = []
 candidate_votes = {}
 
 # initialize variables to hold winner name, votes received, and percentage of votes received.
-winner = ""
+winner = ''
 winner_votes = 0
 winner_percentage = 0
 
@@ -31,7 +31,7 @@ county_votes={}
 
 ### Challenge Step 2 ###
 # initialize variable to hold county with largest turnout
-top_county = ""
+top_county = ''
 
 # initialize variable to hold the number of votes cast in that county.
 top_county_votes=0
@@ -74,11 +74,11 @@ with open(file_load) as election_data:
 
 # make summary of election results
 election_results = (
-    f"\nElection Results\n"
-    f"--------------------------\n"
-    f"Total Votes: {total_votes:,}\n"
-    f"--------------------------\n"
-    f"\n"        
+    f'\nElection Results\n'
+    f'--------------------------\n'
+    f'Total Votes: {total_votes:,}\n'
+    f'--------------------------\n'
+    f'\n'        
 )
 
 
@@ -96,11 +96,11 @@ with open(file_write,'w') as txt_file:
         # build and print summary of turnout in each county
         votes = county_votes[county]
         percentage = 100* float(votes)/float(total_votes)
-        print(f"{county}: {percentage:.1f}% ({votes:,})")
+        print(f'{county}: {percentage:.1f}% ({votes:,})')
 
         ### Challenge Step 6e ###
         # write summary of results for each county to txt_file
-        txt_file.write(f"{county}: {percentage:.1f}% ({votes:,})\n")
+        txt_file.write(f'{county}: {percentage:.1f}% ({votes:,})\n')
 
         ### Challenge Step 6f ###
         # Determine the county with largest turnout and print summary
@@ -127,8 +127,8 @@ with open(file_write,'w') as txt_file:
         votes = candidate_votes[candidate]
         # 4. Compute percentage of vote received by each candidate
         percentage = 100* float(votes)/float(total_votes)
-        print(f"{candidate}: {percentage:.1f}% ({votes:,})\n")
-        txt_file.write(f"{candidate}: {percentage:.1f}% ({votes:,})\n")
+        print(f'{candidate}: {percentage:.1f}% ({votes:,})\n')
+        txt_file.write(f'{candidate}: {percentage:.1f}% ({votes:,})\n')
 
         # 5. Determine winner (one with most votes)
         if votes > winner_votes:
